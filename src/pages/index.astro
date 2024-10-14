@@ -15,7 +15,7 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 const languages = ['English', 'Swedish']
 const frontend = ['Vue', 'Svelte', 'React']
 const backend = ['Java', 'Python', 'Node.js']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+//const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -109,11 +109,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Experience'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
+				heading='Rapid Data'
+				subheading='Fullstack Developer'
+				date='March 2024  - Now'
+				imagePath='/src/assets/Rapid-Data.png'
+				altText='Rapid Data'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
@@ -126,13 +126,33 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
+				heading='TIQQE'
+				subheading='Fullstack Developer'
+				date='June 2023 - Feb 2024'
+				imagePath='/src/assets/TIQQE.png'
+				altText='TIQQE'
 				imageClass='h-12 w-auto md:-left-16'
-			/>
+			>
+				<ul class="ml-4 list-disc text-muted-foreground">
+					<li>
+						Worked
+					</li>
+				</ul>
+			</Card>
+			<Card
+				heading='XLENT'
+				subheading='Fullstack Developer'
+				date='Nov 2022 - May 2023'
+				imagePath='/src/assets/XLENT.png'
+				altText='XLENT'
+				imageClass='h-12 w-auto md:-left-20'
+			>
+				<ul class="ml-4 list-disc text-muted-foreground">
+					<li>
+						Worked
+					</li>
+				</ul>
+			</Card>
 		</Section>
 
 		<Section title='Education'>
