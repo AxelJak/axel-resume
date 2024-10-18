@@ -1,17 +1,17 @@
 ---
-import PageLayout from '../layouts/BaseLayout.astro'
-import Section from '../components/Section.astro'
-import Label from '../components/Label.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
+import Section from '@/components/Section.astro'
+import Card from '@/components/Card.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import Label from '@/components/Label.astro'
+import SkillLayout from '@/components/SkillLayout.astro'
 
 import { Image } from 'astro:assets'
-import astro from '../assets/about-astro.png'
+import astro from '@/assets/about-astro.png'
 
-import { getAllPosts, sortMDByDate } from '@/utils'
-
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const languages = ['English', 'Swedish']
+const frontend = ['Vue', 'Svelte', 'React']
+const backend = ['Java', 'Python', 'Node.js']
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -64,25 +64,75 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			</div>
 		</section>
 
-		<Section title='About'>
-			<p class='text-muted-foreground dark:text-white'>
-				Hello! I'm Axel Jakosson, a software engineer based in Örebro, Sweden. I'm passionate
-				about building software that solves real-world problems and helps people. I'm currently 
-				working at Rapid Data, where I build web applications and APIs using technologies like Vue, Node.js, TypeScript and Java.
-			</p>
+		<Section title='Experience'>
+			<Card
+				heading='Rapid Data'
+				subheading='Fullstack Developer'
+				date='March 2024  - Now'
+				imagePath='/src/assets/Rapid-Data.png'
+				altText='Rapid Data'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			</Card>
+			<Card
+				heading='TIQQE'
+				subheading='Fullstack Developer'
+				date='June 2023 - Feb 2024'
+				imagePath='/src/assets/TIQQE.png'
+				altText='TIQQE'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			</Card>
+			<Card
+				heading='XLENT'
+				subheading='Fullstack Developer'
+				date='Nov 2022 - May 2023'
+				imagePath='/src/assets/XLENT.png'
+				altText='XLENT'
+				imageClass='h-12 w-auto md:-left-20'
+			>
+			</Card>
 		</Section>
-		{
-			allPostsByDate.length > 0 && (
-				<Section title='Posts'>
-					<ul class='flex flex-col gap-y-2'>
-						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
-						))}
-					</ul>
-				</Section>
-			)
-		}
+
+		<Section title='Education'>
+			<Card
+				heading='Civilengineering in Computer Science'
+				subheading='Umeå University'
+				date='Sep 2017 - May 2023'
+				imagePath='/src/assets/Umea_University.png'
+				altText='Umeå University'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			</Card>
+		</Section>
+
+		<Section title='Projects'>
+			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
+				<ProjectCard
+					as='div'
+					heading='Coming soon...'
+					subheading='Film guesser'
+					imagePath='/src/assets/filmguesser.png'
+					altText='FilmGuesser'
+					class='w-full sm:w-1/2'
+				/>
+			</div>
+		</Section>
+
+		<Section title='Certifications'>
+			<Card
+				heading='Sadly no certifications yet'
+				date='To be continued...'
+				altText='Certifications'
+				imageClass='h-11 w-auto md:-left-16'
+			/>
+		</Section>
+
+		<Section title='Skills'>
+			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='Frontend' skills={frontend} />
+			<SkillLayout title='Backend' skills={backend} />
+			<!-- <SkillLayout title='Others' skills={others} /> -->
+		</Section>
 	</div>
 </PageLayout>
