@@ -16,6 +16,7 @@
 		"@astrojs/netlify": "^5.5.4",
 		"@astrojs/rss": "^4.0.5",
 		"@astrojs/sitemap": "^3.1.1",
+		"@astrojs/svelte": "^6.0.2",
 		"@astrojs/tailwind": "^5.1.0",
 		"astro": "^4.4.15",
 		"astro-expressive-code": "^0.33.5",
@@ -26,9 +27,10 @@
 		"rehype-external-links": "^3.0.0",
 		"remark-unwrap-images": "^4.0.0",
 		"sharp": "^0.33.2",
+		"svelte": "^5.2.10",
 		"tailwind-merge": "^2.2.1",
 		"tailwindcss": "^3.4.1",
-		"typescript": "^5.4.2"
+		"typescript": "^5.7.2"
 	},
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",

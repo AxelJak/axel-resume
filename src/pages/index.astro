@@ -3,6 +3,7 @@ import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Label from '../components/Label.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
+import PhotoCard from '@/components/PhotoCard.svelte'
 
 import { Image } from 'astro:assets'
 import astro from '../assets/about-astro.png'
@@ -12,6 +13,18 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+
+const imageUrls = [
+	'https://picsum.photos/200',
+	'https://picsum.photos/200',
+	'https://picsum.photos/200',
+	'https://picsum.photos/200',
+	'https://picsum.photos/200',
+	'https://picsum.photos/200',
+	'https://picsum.photos/200',
+]
+let position = 0;
+
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -84,5 +97,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				</Section>
 			)
 		}
+		<div class="flex flex-wrap justify-center gap-x-7 gap-y-1 min-h-52 border-2 border-gray-200 ">
+			{imageUrls.map(url => <PhotoCard photoUrl={url} text="About me" rotate={(Math.random() - 0.5) * 40} position={(position++ * 100)}/>)}
+		</div>
+
 	</div>
 </PageLayout>
