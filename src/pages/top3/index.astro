@@ -1,0 +1,63 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro';
+import Card from '@/components/Card.astro';
+
+const TOP3 = [
+	{
+		title: 'Tv-series',
+		one: 'Game of Thrones',
+		two: 'Succession',
+		three: 'Peaky Blinders'
+	},
+	{
+		title: 'Single player games',
+		one: 'The Witcher 3',
+		two: 'Elden Ring',
+		three: 'Ori and the Blind Forest'
+	},
+	{
+		title: 'Movies',
+		one: 'The Dark Knight',
+		two: 'Dune 2',
+		three: 'Good Will Hunting'
+	},
+	{
+		title: 'Restaurants',
+		one: 'Kitchenett',
+		two: 'Sobi',
+		three: 'Mojo'
+	},
+	{
+		title: 'Countries I\'ve visited',
+		one: 'Norway',
+		two: 'Italy',
+		three: 'USA'
+	}
+]
+---
+
+<PageLayout meta={{title: 'Top 3s'}}>  
+	<div class='w-full'>
+		<h1 class='mb-10 text-2xl font-bold text-center'>My Top 3s</h1>
+
+		<div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+			{TOP3.map(list => {
+				return (
+					<Card heading={list.title}>
+						<ol role="list" class='flex flex-col gap-y-1 list-inside list-decimal'>
+							<li>
+								{list.one}
+							</li>
+							<li>
+								{list.two}
+							</li>
+							<li>
+								{list.three}
+							</li>
+						</ol>
+					</Card>
+				)}
+			)}
+		</div>
+	</div>
+</PageLayout>

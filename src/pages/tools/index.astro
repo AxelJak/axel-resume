@@ -3,15 +3,15 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import ToolSection from '@/components/ToolSection.astro'
 import Button from '@/components/Button.astro'
 
-const DESIGN = [
-	{
-		name: 'Figma',
-		description: 'Design Tool',
-		href: 'https://www.figma.com/',
-		iconPath: 'figma',
-		iconBgColour: '#000001'
-	}
-]
+// const DESIGN = [
+// 	{
+// 		name: 'Figma',
+// 		description: 'Design Tool',
+// 		href: 'https://www.figma.com/',
+// 		iconPath: 'figma',
+// 		iconBgColour: '#000001'
+// 	}
+// ]
 
 const PRODUCTIVITY = [
 	{
@@ -22,15 +22,15 @@ const PRODUCTIVITY = [
 		iconBgColour: '#414350'
 	},
 	{
-		name: 'Notion',
-		description: 'Note Taking',
-		href: 'https://www.notion.so/product',
-		iconPath: 'notion',
-		iconBgColour: '#EFEFEE'
+		name: 'Raycast',
+		description: 'Productivity',
+		href: 'https://www.raycast.com/',
+		iconPath: 'raycast',
+		iconBgColour: '#1B1F24'
 	},
 	{
 		name: 'Obsidian',
-		description: 'Long-form Writing',
+		description: 'Markdown Editor',
 		href: 'https://obsidian.md/',
 		iconPath: 'obsidian',
 		iconBgColour: '#7A3EE8'
@@ -51,7 +51,14 @@ const DEVELOPMENT = [
 		href: 'https://chat.openai.com/',
 		iconPath: 'chatgpt',
 		iconBgColour: '#06A67F'
-	}
+	},
+	{
+		name: 'Claude',
+		description: 'AI',
+		href: 'https://claude.ai/',
+		iconPath: 'claude',
+		iconBgColour: '#F7F8F9'
+	},
 ]
 ---
 
@@ -79,7 +86,7 @@ const DEVELOPMENT = [
 				<p>Tools and software I use daily</p>
 			</div>
 
-			<ToolSection title='Design' tools={DESIGN} />
+			<!-- <ToolSection title='Design' tools={DESIGN} /> -->
 			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
 			<ToolSection title='Development' tools={DEVELOPMENT} />
 		</div>
